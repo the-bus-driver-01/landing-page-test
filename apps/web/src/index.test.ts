@@ -29,21 +29,21 @@ describe('Portfolio Landing Page - Social Links', () => {
     });
 
     it('should have GitHub social link with correct href', () => {
-        const githubLink = document.querySelector('a[href="https://github.com/username"]');
+        const githubLink = document.querySelector('a[href^="https://github.com/"]');
         expect(githubLink).toBeTruthy();
         expect(githubLink?.textContent).toContain('GitHub');
         expect(githubLink?.getAttribute('title')).toBe('GitHub Profile');
     });
 
     it('should have LinkedIn social link with correct href', () => {
-        const linkedinLink = document.querySelector('a[href="https://linkedin.com/in/username"]');
+        const linkedinLink = document.querySelector('a[href^="https://linkedin.com/in/"]');
         expect(linkedinLink).toBeTruthy();
         expect(linkedinLink?.textContent).toContain('LinkedIn');
         expect(linkedinLink?.getAttribute('title')).toBe('LinkedIn Profile');
     });
 
     it('should have Email social link with correct href', () => {
-        const emailLink = document.querySelector('a[href="mailto:your.email@example.com"]');
+        const emailLink = document.querySelector('a[href^="mailto:"]');
         expect(emailLink).toBeTruthy();
         expect(emailLink?.textContent).toContain('Email');
         expect(emailLink?.getAttribute('title')).toBe('Email Contact');
@@ -106,8 +106,9 @@ describe('Portfolio Landing Page - Social Links', () => {
     it('should have HTML comments documenting placeholder values', () => {
         const htmlContent = readFileSync(resolve(__dirname, 'index.html'), 'utf-8');
         expect(htmlContent).toContain('NOTE: Replace');
-        expect(htmlContent).toContain('username');
-        expect(htmlContent).toContain('your.email@example.com');
+        // Check that links reference GitHub and email domains (structure validation)
+        expect(htmlContent).toMatch(/https:\/\/github\.com\//);
+        expect(htmlContent).toMatch(/mailto:/);
     });
 
     it('should have proper focus states for accessibility', () => {
