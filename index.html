@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Monorepo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 4rem;
+            max-width: 700px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 2.8rem;
+        }
+
+        .subtitle {
+            color: #2a5298;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .intro {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        .projects {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #2a5298;
+        }
+
+        .projects h2 {
+            color: #1e3c72;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-list li {
+            padding: 0.5rem 0;
+            color: #555;
+        }
+
+        .project-list li:before {
+            content: "→ ";
+            color: #2a5298;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        a {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            color: white;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(42, 82, 152, 0.4);
+        }
+
+        .secondary-btn {
+            background: white;
+            color: #2a5298;
+            border: 2px solid #2a5298;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .secondary-btn:hover {
+            background: #f0f5ff;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Portfolio Monorepo</h1>
+        <p class="subtitle">Modern Development Stack</p>
+
+        <p class="intro">
+            This is a monorepo-based portfolio project built with TypeScript, Vite, and modern web technologies.
+            It demonstrates best practices for project organization, testing, and deployment.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Monorepo</h3>
+                <p>Unified workspace management with pnpm workspaces</p>
+            </div>
+            <div class="feature-card">
+                <h3>TypeScript</h3>
+                <p>Fully typed for better development experience</p>
+            </div>
+            <div class="feature-card">
+                <h3>Testing</h3>
+                <p>Vitest for fast unit and integration tests</p>
+            </div>
+        </div>
+
+        <div class="projects">
+            <h2>Projects & Apps</h2>
+            <ul class="project-list">
+                <li><strong>Web App</strong> - Main portfolio web application</li>
+                <li><strong>Documentation</strong> - Project documentation and guides</li>
+                <li><strong>Components</strong> - Reusable UI components library</li>
+            </ul>
+        </div>
+
+        <div class="cta">
+            <a href="apps/web/src/index.html" class="primary-btn">Explore Web App</a>
+            <a href="https://github.com" class="secondary-btn">View Source</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Portfolio Monorepo. Built with TypeScript, Vite, and modern web standards.</p>
+        </footer>
+    </div>
+</body>
+</html>
