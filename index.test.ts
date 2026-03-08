@@ -29,21 +29,21 @@ describe('Portfolio Landing Page - Social Links', () => {
     });
 
     it('should have GitHub social link with correct href', () => {
-        const githubLink = document.querySelector('a[href="https://github.com"]');
+        const githubLink = document.querySelector('a[href="https://github.com/username"]');
         expect(githubLink).toBeTruthy();
         expect(githubLink?.textContent).toContain('GitHub');
         expect(githubLink?.getAttribute('title')).toBe('GitHub Profile');
     });
 
     it('should have LinkedIn social link with correct href', () => {
-        const linkedinLink = document.querySelector('a[href="https://linkedin.com"]');
+        const linkedinLink = document.querySelector('a[href="https://linkedin.com/in/username"]');
         expect(linkedinLink).toBeTruthy();
         expect(linkedinLink?.textContent).toContain('LinkedIn');
         expect(linkedinLink?.getAttribute('title')).toBe('LinkedIn Profile');
     });
 
     it('should have Email social link with correct href', () => {
-        const emailLink = document.querySelector('a[href="mailto:contact@example.com"]');
+        const emailLink = document.querySelector('a[href="mailto:your.email@example.com"]');
         expect(emailLink).toBeTruthy();
         expect(emailLink?.textContent).toContain('Email');
         expect(emailLink?.getAttribute('title')).toBe('Email Contact');
